@@ -112,7 +112,7 @@ if(mmRes != MMSYSERR_NOERROR )
 
 WaveHdr.dwFlags = 0;
 WaveHdr.dwLoops = 0;
-WaveHdr.lpData = malloc(BufferSize);
+WaveHdr.lpData = (char *)malloc(BufferSize);
 WaveHdr.dwBufferLength = BufferSize;
 
 srand( (unsigned)time( NULL ) );
