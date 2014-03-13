@@ -2,7 +2,8 @@
   nuclear strike by localghost
   work of drugs, my damaged brain and kabbala adeptz :)
 */
-
+#pragma comment(lib, "winmm.lib")
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -34,8 +35,8 @@ void Errinf()
         (LPTSTR) &lpMsgBuf,
         0, NULL );
 
-    wsprintf( szBuf, "Failed with error %d: %s", dwCode, lpMsgBuf ); 
-    MessageBox(NULL, szBuf, "Error", MB_ICONERROR); 
+    wsprintf( (LPWSTR)szBuf, "Failed with error %d: %s", dwCode, lpMsgBuf ); 
+    MessageBox(NULL, (LPWSTR)szBuf, "Error", MB_ICONERROR); 
 
     LocalFree(lpMsgBuf);
   }
